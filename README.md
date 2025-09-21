@@ -60,6 +60,4 @@ The app can be deployed to services like Heroku, Render or Vercel. For example, 
 
 For the frontend, you can deploy to Vercel by linking the `frontend` folder and using the default React build script.
 
-## Contributing
-
-If you'd like to extend this project, feel free to fork the repository and submit a pull request. Contributions that improve the architecture, add features (e.g. authentication, Slack notifications) or enhance the UI/UX are welcome!
+**ENJOY!!!!**
