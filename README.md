@@ -1,5 +1,5 @@
 
-# Collaborative Task Planner
+# FlowTask (Collaborative Task Planner)
 
 Collaborative Task Planner is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
 
