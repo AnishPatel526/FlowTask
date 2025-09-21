@@ -6,8 +6,6 @@
  * 2. Generate OAuth client credentials and download the credentials JSON.
  * 3. Use the googleapis package to authenticate and create events.
  *
- * The implementation is omitted here to keep the sample light. See
- * https://developers.google.com/calendar/api/quickstart/nodejs for guidance.
  */
 
 module.exports = {};
