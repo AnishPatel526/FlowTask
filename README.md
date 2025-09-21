@@ -1,65 +1,65 @@
-Collaborative Task Planner
+# Collaborative Task Planner
 
-This project is a web application designed to make planning tasks with friends or teammates simple and effective. It goes beyond a basic to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
+This project is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
 
-I built this project to practice full-stack development and learn how to integrate features that are commonly used in real-world software: databases, real-time communication, and external APIs.
+I built this project to practice full-stack development and learn how to incorporate features commonly used in real-world software, such as databases, real-time communication, and external APIs.
 
-Features
+## Features
 
-Create, update, and complete tasks with due dates and priorities
+* **Task management** – create, update, delete and reorder tasks. Each task has a title, description, due date, priority and completion status.
+* **Real‑time updates** – when one user adds or updates a task, other connected clients are updated instantly via WebSockets.
+* **Calendar integration** – optional Google Calendar sync so that task due dates appear on your calendar. See `backend/google.js` for placeholder code.
+* **Collaborative notes/whiteboard** – a simple canvas that multiple users can draw on simultaneously. Built with the HTML5 `<canvas>` API and WebRTC data channels for peer‑to‑peer updates.
+* **REST API** – the backend exposes RESTful endpoints to manage tasks and notes. See `backend/routes/`.
 
-Sync tasks with Google Calendar for reminders and scheduling
+This repository contains two top‑level folders:
 
-Real-time collaboration with WebSockets (instant updates across users)
+* `frontend` – a React application bootstrapped without Create React App. It uses functional components, React Router and the `socket.io-client` library for real‑time communication.
+* `backend` – a Node.js application using Express. It connects to PostgreSQL via the `pg` library and uses `socket.io` for WebSocket communication. Database configuration is handled via environment variables. See `.env.example` for expected variables.
 
-Shared whiteboard/notes board for brainstorming with teammates
+## Running Locally
 
-Simple and clean user interface built with React
+1. **Install dependencies**:
 
-Tech Stack
+   ```bash
+   cd backend
+   npm install
+   cd ../frontend
+   npm install
+   ```
 
-Frontend: React, React Router, Webpack
+2. **Set up the database**:
 
-Backend: Node.js, Express, Socket.IO
+   Create a PostgreSQL database and run the SQL in `backend/database/schema.sql`. Then copy `.env.example` to `.env` and fill in your connection URL. The server looks for `DATABASE_URL` and `GOOGLE_CLIENT_SECRET` variables.
 
-Database: PostgreSQL
+3. **Start the backend server**:
 
-Other: Google Calendar API, Firebase/WebRTC (for collaborative notes)
+   ```bash
+   cd backend
+   npm start
+   ```
 
-Getting Started
-1. Clone the repository
-git clone https://github.com/AnishPatel526/collaborative-task-planner.git
-cd collaborative-task-planner
+   The server will run on `http://localhost:5000` by default.
 
-2. Backend setup
-cd backend
-npm install
-cp .env.example .env   # add your Postgres + Google API keys
-npm start
+4. **Start the frontend development server**:
 
-3. Database setup
+   ```bash
+   cd frontend
+   npm start
+   ```
 
-Run the schema:
+   This will run the React app on `http://localhost:3000`.
 
-psql -d your_database -f database/schema.sql
+## Deployment
 
-4. Frontend setup
-cd ../frontend
-npm install
-npm start
+The app can be deployed to services like Heroku, Render or Vercel. For example, to deploy the backend on Render:
 
+1. Create a new **Web Service** on Render pointing to the `backend` folder.
+2. Configure the build command as `npm install` and the start command as `npm start`.
+3. Add the environment variables defined in `.env.example` in the Render dashboard.
 
-The frontend will run on http://localhost:3000
-.
+For the frontend, you can deploy to Vercel by linking the `frontend` folder and using the default React build script.
 
-Next Steps
+## Contributing
 
-Deploy backend (Heroku/Render) and frontend (Vercel/Netlify)
-
-Add task categories and recurring tasks
-
-Improve UI with drag-and-drop task management
-
-About
-
-Created by Anish Patel, Computer Science and Statistics student at UNC Chapel Hill, interested in building tools that make everyday collaboration more efficient.
+If you'd like to extend this project, feel free to fork the repository and submit a pull request. Contributions that improve the architecture, add features (e.g. authentication, Slack notifications) or enhance the UI/UX are welcome!
