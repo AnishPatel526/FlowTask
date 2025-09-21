@@ -1,23 +1,28 @@
+
 # Collaborative Task Planner
 
-This project is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
+Collaborative Task Planner is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
 
-I built this project to practice full-stack development and learn how to incorporate features commonly used in real-world software, such as databases, real-time communication, and external APIs.
+I built this project to practice full-stack development and learn how to incorporate features commonly used in real-world software, such as databases, real-time communication, and external APIs. The refreshed UI keeps things lightweight while adding a couple of "nice to have" touches you might expect from a sophomore/junior-level project: dark mode, task filters, real-time progress stats, and an upgraded whiteboard for quick collaboration.
 
-## Features
+## Highlights
 
-* **Task management** – create, update, delete and reorder tasks. Each task has a title, description, due date, priority and completion status.
-* **Real‑time updates** – when one user adds or updates a task, other connected clients are updated instantly via WebSockets.
-* **Calendar integration** – optional Google Calendar sync so that task due dates appear on your calendar. See `backend/google.js` for placeholder code.
-* **Collaborative notes/whiteboard** – a simple canvas that multiple users can draw on simultaneously. Built with the HTML5 `<canvas>` API and WebRTC data channels for peer‑to‑peer updates.
-* **REST API** – the backend exposes RESTful endpoints to manage tasks and notes. See `backend/routes/`.
+- **Task dashboard**: add tasks with rich descriptions and due dates, then filter, search, and sort them automatically.
+- **Smarter status view**: progress bar, overdue counts, and a "next up" callout that surfaces the closest deadline.
+- **Live collaboration**: Socket.IO keeps tasks and the canvas in sync for everyone connected.
+- **Theme toggle**: remembers your light/dark preference and adapts to system defaults.
+- **Upgraded whiteboard**: adjustable pen size, quick color palette, and one-click board clear.
+- **Straightforward stack**: React + Express + PostgreSQL, with real-time events via Socket.IO.
+- **Extensible integrations**: REST API endpoints and a Google Calendar stub ready for future sync.
 
-This repository contains two top‑level folders:
+> Want to experiment with calendar sync or persistent whiteboard notes? Check out `backend/google.js` and `backend/routes/notes.js` for stubs you can extend when you have more time.
 
-* `frontend` – a React application bootstrapped without Create React App. It uses functional components, React Router and the `socket.io-client` library for real‑time communication.
-* `backend` – a Node.js application using Express. It connects to PostgreSQL via the `pg` library and uses `socket.io` for WebSocket communication. Database configuration is handled via environment variables. See `.env.example` for expected variables.
+## Project structure
 
-## Running Locally
+- `frontend` - React SPA using React Router and `socket.io-client`. Custom styling lives in `frontend/styles.css`.
+- `backend` - Express server with REST routes, Socket.IO, and PostgreSQL access through `pg`.
+
+## Running locally
 
 1. **Install dependencies**:
 
@@ -52,12 +57,14 @@ This repository contains two top‑level folders:
 
 ## Deployment
 
-The app can be deployed to services like Heroku, Render or Vercel. For example, to deploy the backend on Render:
+Deploy the backend to your preferred Node host (Render, Railway, Fly.io, etc.) and point it at a managed PostgreSQL instance. Use `npm install` for the build command and `npm start` for the run command. Remember to copy the environment variables from `.env`.
 
-1. Create a new **Web Service** on Render pointing to the `backend` folder.
-2. Configure the build command as `npm install` and the start command as `npm start`.
-3. Add the environment variables defined in `.env.example` in the Render dashboard.
+For the frontend, run `npm run build` and serve the compiled assets from a static host such as Vercel, Netlify, or an S3 bucket behind a CDN.
 
-For the frontend, you can deploy to Vercel by linking the `frontend` folder and using the default React build script.
+## Next steps
+
+- Hook up `backend/google.js` to the Google Calendar API to push deadlines automatically.
+- Persist whiteboard snapshots so teams can revisit previous drawings.
+- Add authentication if you plan to run this outside of trusted teammates.
 
 **ENJOY!!!!**
