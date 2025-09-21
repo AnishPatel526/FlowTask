@@ -1,0 +1,8 @@
+# Ignore node_modules and build artifacts
+**/node_modules/
+**/dist/
+**/build/
+.env
+.DS_Store
+*.log
+*.sqlite3
