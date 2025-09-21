@@ -1,7 +1,7 @@
 
-# FlowTask (Collaborative Task Planner)
+# SyncBoard (Collaborative Task Planner)
 
-Collaborative Task Planner is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
+SyncBoard is a web application designed to make planning tasks with friends or teammates easy and effective. It goes beyond a simple to-do list by allowing users to create and track tasks, set deadlines, sync with calendars, and collaborate in real time with shared notes and whiteboards.
 
 I built this project to practice full-stack development and learn how to incorporate features commonly used in real-world software, such as databases, real-time communication, and external APIs. The refreshed UI keeps things lightweight while adding a couple of "nice to have" touches you might expect from a sophomore/junior-level project: dark mode, task filters, real-time progress stats, and an upgraded whiteboard for quick collaboration.
 
